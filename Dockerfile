@@ -2,12 +2,6 @@ FROM nvcr.io/nvidia/tritonserver:21.04-py3
 
 WORKDIR /workspace
 
-#ENV CONDA_DIR /opt/conda
-#RUN wget https://repo.anaconda.com/archive/Anaconda3-5.3.1-Linux-x86_64.sh -O ~/anaconda.sh
-#RUN bash ~/anaconda.sh -b -p $CONDA_DIR
-
-#ENV PATH $CONDA_DIR/bin:$PATH
-
 RUN apt update
 
 # Replace Python 3.8 with Python 3.7
@@ -42,5 +36,3 @@ RUN make install
 # Pre-copy our test-model to test
 COPY test-model /repo/test-model
 
-#COPY requirements.txt .
-#RUN pip3 install -r requirements.txt
